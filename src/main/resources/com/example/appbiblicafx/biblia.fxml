@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.appbiblicafx.controllers.BibliaController">
+
+    <!-- CABECERA -->
+    <top>
+        <VBox spacing="5" alignment="CENTER" style="-fx-background-color: #1a73e8;">
+            <padding>
+                <Insets top="20" bottom="10" left="30" right="30"/>
+            </padding>
+            <Label text="📖 APLICACIÓN BÍBLICA"
+                   textFill="#ffffff"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+
+            <Label text="¡Gloria a Dios por Su Palabra Viva y Eterna!"
+                   textFill="#e0f7fa"
+                   style="-fx-font-size: 14px; -fx-font-style: italic;"/>
+        </VBox>
+    </top>
+
+    <!-- MENÚ LATERAL IZQUIERDO -->
+    <left>
+        <VBox spacing="12" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" bottom="20" left="20" right="10"/>
+            </padding>
+
+            <Label text="📚 Versículos"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #37474f;"/>
+
+            <!-- Campo de búsqueda -->
+            <TextField fx:id="campoBusqueda"
+                       promptText="Buscar por palabra..."
+                       prefWidth="240"
+                       style="-fx-font-size: 13px;"/>
+
+            <!-- Lista de versículos -->
+            <ListView fx:id="listaVersiculos" prefWidth="260" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+
+    <!-- CUERPO PRINCIPAL -->
+    <center>
+        <VBox spacing="25" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="30" bottom="30" left="30" right="30"/>
+            </padding>
+
+            <!-- Referencia del versículo -->
+            <Label fx:id="labelReferencia"
+                   styleClass="referencia"
+                   alignment="CENTER"
+                   wrapText="true"
+                   maxWidth="600"/>
+
+            <Separator prefWidth="400"/>
+
+            <!-- Texto del versículo -->
+            <Label fx:id="labelTexto"
+                   styleClass="texto"
+                   alignment="CENTER"
+                   wrapText="true"
+                   maxWidth="650"/>
+
+            <!-- Botones de acción -->
+            <HBox spacing="30" alignment="CENTER">
+                <Button fx:id="btnFavorito" text="⭐ Marcar como Favorito" prefWidth="180"/>
+                <Button fx:id="btnBuscar" text="🔍 Buscar Versículo" prefWidth="180"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- PIE DE PÁGINA -->
+    <bottom>
+        <VBox alignment="CENTER">
+            <padding>
+                <Insets top="12" bottom="12" left="20" right="20"/>
+            </padding>
+            <Separator prefWidth="650"/>
+            <Label text="🌟 «Lámpara es a mis pies tu palabra, Y lumbrera a mi camino.» — Salmos 119:105 🌟"
+                   style="-fx-font-size: 14px; -fx-font-style: italic; -fx-text-fill: #455a64;"
+                   wrapText="true"
+                   alignment="CENTER"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>
